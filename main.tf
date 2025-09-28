@@ -4,7 +4,7 @@ resource "aws_instance" "runner" {
   ami           = local.ami_id
   instance_type = "t3.small"
   vpc_security_group_ids = [aws_security_group.main.id]
-  subnet_id = "subnet-05ba31ef8fb5ba283" #replace your Subnet
+  subnet_id = "subnet-0eee97bf98cf470ea" #replace your Subnet
 
   # need more for terraform
   root_block_device {
@@ -43,7 +43,7 @@ resource "aws_security_group" "main" {
   tags = merge(
     local.common_tags,
     {
-        Name = "${var.project}-${var.environment}-jenkins"
+        Name = "${var.project}-${var.environment}-actions"
     }
   )
 }

@@ -1,0 +1,10 @@
+name: self-hosted runner #workflow
+on: [push] #events like push, crete PR, create an issue
+jobs: # a workflow can have multiple pipelines
+  hello:
+    runs-on: self-hosted
+    steps:
+      - name: step1
+        run: echo "Hello world"
+      - name: step2
+        run: echo "Hello GitHub Actions" 
